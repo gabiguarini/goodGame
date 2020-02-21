@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>Good game</title> 
+  
+    <style> 
+        html { 
+    font-family: sans-serif; 
+    } 
+      
+        body { 
+    width: 50%; 
+    max-width: 800px; 
+    min-width: 480px; 
+    margin: 0 auto; 
+    } 
+    </style> 
+</head> 
+  
+<body> 
+<h1>Adivinador</h1> 
+  
+<p>Adivina si el número siguiente es 'mayor' o 'menor' que: </p>
+ <p id="num"></p>
+           <script>
+             var first = document.getElementById("num").innerHTML=Math.floor(Math.random() *10)+1;
+           </script> 
+  
+<div> 
+    <label for="select-guess">Seleccione su respuesta </label> 
+    <select id="select-guess" onchange="mostrarSeleccion()">
+        <option value="mayor">mayor</option>
+        <option value="menor">menor</option>
+    </select>
+    
+    <button id="comprobar">suerte!</button>
+    
+    <script>
+        document.getElementById("comprobar").onclick=mostrarNum;
+        
+        function mostrarNum(){
+        var resp = document.querySelector('#select-guess option:checked').value;
+            
+            switch(resp){
+            case "mayor":
+                if(first < nuevo){
+                    alert(nuevo + ' ' + 'Adivinaste! :)');
+                }
+                    else{
+                        alert(nuevo + ' ' + 'mejor suerte la prox :(');
+                    }
+                break;
+                    
+            case "menor":
+                if(first > nuevo){
+                    alert(nuevo + ' ' + 'Adivinaste! :)');
+                }
+                    else{
+                        alert(nuevo + ' ' + 'mejor suerte la prox :(');
+                    }
+                break;
+            
+            }
+            
+        }
+        
+    </script>
+    </div>
+  
+    <script type = "text/javascript"> 
+  
+    var nuevo = Math.floor(Math.random() * 10 + 1); 
+            
+   
+    </script> 
+</body> 
+</html>                
